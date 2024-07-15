@@ -30,8 +30,11 @@ jobs:
     - name: Pull Docker image
       run: docker pull chathuratd007/pms_back:latest
 
-    - name: Delete existing Docker container
-      run: docker rm -f pms_back || true
+    - name: Stop existing Docker container (if running)
+      run: docker stop pms_back || true
+
+    - name: Remove existing Docker container (if exists)
+      run: docker rm pms_back || true
 
     - name: Run Docker container in production
       run: |
