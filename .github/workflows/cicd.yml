@@ -3,7 +3,7 @@ name: Deploy frontend of the PMS
 on:
   push:
     branches:
-      - main  # Change this to your main branch name
+      - main
 
 jobs:
   build:
