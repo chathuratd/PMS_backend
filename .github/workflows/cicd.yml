@@ -1,4 +1,4 @@
-name: Deploy frontend of the PMS
+name: Deploy backend of the PMS
 
 on:
   push:
@@ -29,6 +29,12 @@ jobs:
     steps:
     - name: Pull Docker image
       run: docker pull chathuratd007/pms_back:latest
+
+    - name: Stop existing Docker container
+      run: docker stop $(docker ps -q --filter ancestor=chathuratd007/pms_back:latest)
+
+    - name: Remove existing Docker container
+      run: docker rm $(docker ps -aq --filter ancestor=chathuratd007/pms_back:latest)  
 
     - name: Run Docker container in production
       run: |
