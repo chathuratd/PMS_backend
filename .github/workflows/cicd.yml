@@ -1,0 +1,32 @@
+name: Deploy frontend of the PMS
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Login to docker hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" 
+    - name: Build docker image
+      run: docker build -t chathuratd007/pms_front .
+    - name: Push docker image
+      run: docker push chathuratd007/pms_front:latest
+
+  deploy:
+    needs: build
+    runs-on: self-hosted
+
+    steps:
+    - name: Pull Docker image
+      run: docker pull chathuratd007/pms_front
+
+    - name: Run Docker container in production
+      run: docker run -d -p 4000:4000 chathuratd007/pms_front:latest -e MONGO_URI=${{ secrets.MONGO_URI }} -e JWT_SECRET=${{ secrets.JWT_SECRET }} -e PORT=4000
