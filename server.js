@@ -27,7 +27,6 @@ cronJobs.init();
 
 const app = express();
 
-// Configure CORS to allow requests from the React frontend
 const allowedOrigins = [process.env.REACT_APP_PROD_BASE_URL];
 const corsOptions = {
   origin: (origin, callback) => {

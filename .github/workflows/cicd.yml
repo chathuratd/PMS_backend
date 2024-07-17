@@ -38,7 +38,7 @@ jobs:
 
     - name: Run Docker container in production
       run: |
-        docker run -d -p 4001:4000 \
+        docker run -d -p 4000:4000 \
           -e "MONGO_URI=${{ secrets.MONGO_URI }}" \
           -e "JWT_SECRET=${{ secrets.JWT_SECRET }}" \
           -e "REACT_APP_PROD_BASE_URL"="${{ secrets.REACT_APP_PROD_BASE_URL }}" \
