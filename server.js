@@ -2,6 +2,9 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
+//import cors
+import cors from 'cors';
+
 //import jobs
 import cronJobs from './jobs/cronJobs.js';
 
@@ -28,11 +31,15 @@ import email from './routes/sendEmail.js'
 //import all pres
 import allPres from './routes/ShowPres.js';
 
+
 dotenv.config()
 
 cronJobs.init();
 
 const app = express()
+
+app.use(cors());
+
 
 //parse the request body
 app.use(express.json())
