@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
-// import cronJobs and routes
+// Import cronJobs and routes
 import cronJobs from './jobs/cronJobs.js';
 import userRoutes from './routes/user.js';
 import prescriptionRoutes from './routes/prescription.js';
@@ -28,7 +28,7 @@ cronJobs.init();
 const app = express();
 
 // Configure CORS to allow requests from the React frontend
-const allowedOrigins = [`process.env.REACT_APP_PROD_BASE_URL`];
+const allowedOrigins = [process.env.REACT_APP_PROD_BASE_URL];
 const corsOptions = {
   origin: (origin, callback) => {
     if (allowedOrigins.includes(origin) || !origin) {
