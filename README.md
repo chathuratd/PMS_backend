@@ -54,8 +54,8 @@ To run the backend locally, follow these steps:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/chathuratd/pharmacy-management-system.git
-    cd pharmacy-management-system/backend
+    git clone https://github.com/chathuratd/PMS_backend.git
+    cd PMS_backend
     ```
 
 2. Install dependencies:
@@ -66,7 +66,7 @@ To run the backend locally, follow these steps:
 3. Create a `.env` file with the necessary environment variables:
     ```makefile
     MONGO_URI=<your-database-connection-string>
-    JWT_SECRET=<your-jwt-secret>
+    SECRET=<your-jwt-secret>
     PORT=4000
     ```
 
