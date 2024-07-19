@@ -17,7 +17,7 @@ To run the Docker container, use the following command:
 ```sh
 docker run -d -p 4000:4000 \
           -e "MONGO_URI=<your-database-connection-string>" \
-          -e "JWT_SECRET=<your-jwt-secret>" \
+          -e "SECRET=<your-jwt-secret>" \
           -e "PORT=4000" \
           --name pms_back \
           chathuratd007/pms_back:latest
