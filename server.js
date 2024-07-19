@@ -28,18 +28,23 @@ cronJobs.init();
 const app = express();
 
 const allowedOrigins = [process.env.REACT_APP_PROD_BASE_URL];
+
 const corsOptions = {
-  origin: (origin, callback) => {
-    if (allowedOrigins.includes(origin) || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true,
+    origin: (origin, callback) => {
+      console.log("Origin:", origin);
+      if (allowedOrigins.includes(origin) || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
 };
 
 app.use(cors(corsOptions));
+
 
 // Parse the request body
 app.use(express.json());
