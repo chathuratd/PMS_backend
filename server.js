@@ -31,7 +31,6 @@ const allowedOrigins = [process.env.REACT_APP_PROD_BASE_URL];
 
 const corsOptions = {
     origin: (origin, callback) => {
-      console.log("Origin:", origin); // Debugging line
       if (allowedOrigins.includes(origin) || !origin) {
         callback(null, true);
       } else {
