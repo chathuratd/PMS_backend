@@ -46,7 +46,7 @@ The backend exposes the following main routes:
 
 ## Deployment
 
-The backend is currently hosted at: [http://34.228.79.166:4000/](http://34.228.79.166:4000/)
+The backend is currently hosted at [http://34.228.79.166:4000/](http://34.228.79.166:4000/)
 
 ## Getting Started
 
