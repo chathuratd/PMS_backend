@@ -17,7 +17,7 @@ To run the Docker container, use the following command:
 ```sh
 docker run -d -p 4000:4000 \
           -e "MONGO_URI=<your-database-connection-string>" \
-          -e "JWT_SECRET=<your-jwt-secret>" \
+          -e "SECRET=<your-jwt-secret>" \
           -e "PORT=4000" \
           --name pms_back \
           chathuratd007/pms_back:latest
@@ -46,7 +46,7 @@ The backend exposes the following main routes:
 
 ## Deployment
 
-The backend is currently hosted at: [http://54.172.39.22:4000/](http://54.172.39.22:4000/)
+The backend is currently hosted at: [http://34.228.79.166:4000/](http://34.228.79.166:4000/)
 
 ## Getting Started
 
@@ -54,8 +54,8 @@ To run the backend locally, follow these steps:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/chathuratd/pharmacy-management-system.git
-    cd pharmacy-management-system/backend
+    git clone https://github.com/chathuratd/PMS_backend.git
+    cd PMS_backend
     ```
 
 2. Install dependencies:
@@ -66,7 +66,7 @@ To run the backend locally, follow these steps:
 3. Create a `.env` file with the necessary environment variables:
     ```makefile
     MONGO_URI=<your-database-connection-string>
-    JWT_SECRET=<your-jwt-secret>
+    SECRET=<your-jwt-secret>
     PORT=4000
     ```
 
