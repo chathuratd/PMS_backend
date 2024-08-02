@@ -79,4 +79,4 @@ The server will start on [http://localhost:4000](http://localhost:4000).
 
 ## GitHub Actions
 
-The workflow file for continuous integration and deployment can be found in the GitHub Actions tab of the repository.
+The workflow file for continuous integration and deployment can be found in the repository's GitHub Actions tab.
